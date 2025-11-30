@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 from flask_jwt_extended import JWTManager, jwt_required, get_jwt_identity, create_access_token, verify_jwt_in_request
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get("SECRET")
+jwt = JWTManager(app)
 
 OK_CODE = 200
 SUCCESS_CODE = 201
@@ -95,4 +97,5 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
 
