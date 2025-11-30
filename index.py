@@ -34,7 +34,7 @@ def send_morse_code():
     if "l_morse_code" not in data or "l_space" not in data:
         return jsonify({"error": "Invalid input."}), BAD_REQUEST_CODE
     try:
-        last_log_done = cur.execute("SELECT l_space FROM mctt.view_log WHERE l_id = (SELECT MAX(l_id) FROM mctt_view_log)")
+        last_log_done = cur.execute("SELECT l_space FROM mctt.view_log WHERE l_id = (SELECT MAX(l_id) FROM mctt.view_log)")
         if last_log_done == True:
             cur.execute("call database.insert_log(%s, %b)",[data["l_morse_code"], data["l_space"]])
         else:
@@ -97,6 +97,7 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
 
 
 
