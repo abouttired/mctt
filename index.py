@@ -39,6 +39,7 @@ def send_morse_code():
             cur.execute("call database.insert_log(%s, %b)",[data["l_morse_code"], data["l_space"]])
         else:
             cur.execute("call database.update_log(%s, %b)",[data["l_morse_code"], data["l_space"]])
+        token=create_access_token(identity=token_data)
         conn.commit()
     except Exception as e:
         msg = {"exception": str(e)}
@@ -97,5 +98,6 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
 
 
