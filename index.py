@@ -54,8 +54,15 @@ def get_translation():
     cur = conn.cursor()
     
     cur.execute("SELECT * FROM mctt.view_log WHERE l_id = (SELECT MAX(l_id) FROM mctt.log)")
-    log = cur.fetchone()
-
+    entry = cur.fetchone()
+    log = { 
+        "l_id": entry[0],
+        "l_timestamp": entry[1],
+        "l_morse_code": entry[2], 
+        "l_translation": entry[3],
+        "l_space": entry[4]
+    }
+    
     cur.close()
     conn.close()
 
@@ -88,3 +95,4 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
