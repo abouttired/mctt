@@ -68,7 +68,7 @@ def get_translation():
     cur.close()
     conn.close()
 
-    return jsonify(log), OK_CODE
+    return log, OK_CODE
 
 
 @app.route('/logs', methods=['GET'])
@@ -91,12 +91,13 @@ def get_logs():
     cur.close()
     conn.close()
 
-    return jsonify(logs), OK_CODE
+    return logs, OK_CODE
 
 
 if __name__ == "__main__":
 
     app.run()
+
 
 
 
