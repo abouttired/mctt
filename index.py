@@ -30,9 +30,9 @@ def send_morse_code():
     try:
         last_log_done = cur.execute("SELECT l_space FROM mctt.view_log WHERE l_id = (SELECT MAX(l_id) FROM mctt.view_log)")
         if last_log_done == True:
-            cur.execute("call mctt.insert_log(%s, %s)",[string(data["l_morse_code"]), int(data["l_space"])])
+            cur.execute("call mctt.insert_log(%s, %s)",[data["l_morse_code"], !!data["l_space"]])
         else:
-            cur.execute("call mctt.update_log(%s, %s)",[string(data["l_morse_code"]), int(data["l_space"])])
+            cur.execute("call mctt.update_log(%s, %s)",[data["l_morse_code"], !!data["l_space"]])
         conn.commit()
     except Exception as e:
         msg = {"exception": str(e)}
@@ -90,6 +90,7 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
 
 
 
