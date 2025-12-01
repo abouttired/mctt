@@ -1,11 +1,19 @@
 {
   "rewrites" [
-    { "source": "/(.*)", "destination": "/index" }
+    {
+      "source": "/(.*)",
+      "destination": "/index"
+    }
   ],
   "redirects" [
-    { "source": "/morsecode" , "destination": "https://mctt-seven.vercel.app/morsecode" , "permanent": true }
+    {
+      "source": "/morsecode",
+      "destination": "https://mctt-seven.vercel.app/morsecode",
+      "permanent": true
+    }
   ]
 }
+
 
 
 
