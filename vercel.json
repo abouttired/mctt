@@ -1,11 +1,12 @@
 {
   "rewrites" [
     {
-      "source": "/(.*)",
-      "destination": "/index"
+      "source": "/index",
+      "destination": "/(.*)"
     }
   ]
 }
+
 
 
 
