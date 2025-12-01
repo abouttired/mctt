@@ -23,7 +23,7 @@ def home():
 def send_morse_code():
     conn = db_connection()
     cur = conn.cursor()
-    data = request.get_json()
+    data = request.json()
     if "l_morse_code" not in data or "l_space" not in data:
         return jsonify({"error": "Invalid input."}), BAD_REQUEST_CODE
     try:
@@ -90,6 +90,7 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
 
 
 
