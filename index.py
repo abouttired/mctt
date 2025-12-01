@@ -19,7 +19,7 @@ def db_connection():
 def home():
     return "Welcome to API!"
 
-@app.route('/morsecode/', methods=['POST'])
+@app.route('/morsecode', methods=['POST'])
 def send_morse_code():
     conn = db_connection()
     cur = conn.cursor()
@@ -90,6 +90,7 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
 
 
 
