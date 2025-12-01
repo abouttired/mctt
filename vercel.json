@@ -1,8 +1,12 @@
 {
+  "rewrites" [
+    { "source": "/(.*)", "destination": "/index" }
+  ],
   "redirects" [
     { "source": "/morsecode" , "destination": "https://mctt-seven.vercel.app/morsecode" , "permanent": true }
   ]
 }
+
 
 
 
