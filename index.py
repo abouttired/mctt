@@ -8,8 +8,8 @@ SUCCESS_CODE = 201
 BAD_REQUEST_CODE = 400
 
 def db_connection(): 
-    db = psycopg2.connect(database="db2023153988",
-        user="a2023153988",
+    db = psycopg2.connect(database="db2023137501",
+        user="a2023137501",
         password="123",
         host="aid.estgoh.ipc.pt",
         port="5432") 
@@ -90,6 +90,7 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
 
 
 
