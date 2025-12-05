@@ -72,7 +72,7 @@ def get_logs():
     cur.execute("SELECT * FROM mctt.view_log")
     logs = []
     for entry in cur.fetchall():
-        if entry[0] == '1':
+        if entry[2] == '':
             continue
             
         e = { 
@@ -93,6 +93,7 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
 
 
 
