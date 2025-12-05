@@ -3,17 +3,3 @@
     { "source": "/(.*)", "destination": "index.py" }
   ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
