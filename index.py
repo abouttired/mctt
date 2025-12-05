@@ -84,12 +84,13 @@ def get_logs():
     cur.close()
     conn.close()
 
-    return logs, OK_CODE
+    return jsonify(logs), OK_CODE
 
 
 if __name__ == "__main__":
 
     app.run()
+
 
 
 
