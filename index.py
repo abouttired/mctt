@@ -72,6 +72,9 @@ def get_logs():
     cur.execute("SELECT * FROM mctt.view_log")
     logs = []
     for entry in cur.fetchall():
+        if entry[0] == 1:
+            continue
+            
         e = { 
             "l_id": entry[0],
             "l_timestamp": entry[1],
@@ -90,6 +93,7 @@ def get_logs():
 if __name__ == "__main__":
 
     app.run()
+
 
 
 
